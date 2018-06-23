@@ -9,18 +9,18 @@ export default {
     id: '111',
     name: "Donald Wu",
     age: 27,
-    imageUrl: "",
+    imageUrl: "/images/male1.png",
   },
   "222": {
     id: '222',
     name: "Jason Sia",
     age: 27,
-    imageUrl: "",
+    imageUrl: "/images/male2.png",
   },
   "333": {
     id: '333',
     name: "Agnes Chew",
     age: 23,
-    imageUrl: "",
+    imageUrl: "/images/female1.png",
   },
 }
