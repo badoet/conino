@@ -29,7 +29,6 @@ class App extends Component {
               <Route path="/view-allergies" component={ViewAllergies} />
               <Route path="/view-prescribed-antibiotics" component={ViewPrescribedAntibiotics} />
               <Route path="/patients/:id" component={Home} />
-              <Route path="/start" component={FindPatient} />
               <Route path="/" component={FindPatient} />
             </Switch>
           </Config>
