@@ -2,12 +2,9 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import TextField from '@material-ui/core/TextField';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import { Link } from "react-router-dom";
-import Patients from '../../config/patients';
 
-import '../../styles/styles.css';
+import Patients from '../../config/patients';
+import PatientInfo from '../PatientInfo';
 
 class FindPatient extends Component {
   static contextTypes = {
@@ -46,27 +43,13 @@ class FindPatient extends Component {
           margin="normal"
         />
         {this.state.patientInfo && (
-          <Card className="findPatientResult">
-            <CardContent className="patientInfo">
-              <Link to={`/patients/${this.state.patientInfo.id}`}>
-                <img className="patientImg" src={this.state.patientInfo.imageUrl} />
-                <div className="patientDetails">
-                  <div className="patientId">
-                    <label>Patient ID:</label>
-                    <span>{this.state.patientInfo.id}</span>
-                  </div>
-                  <div className="patientName">
-                    <label>Name:</label>
-                    <span>{this.state.patientInfo.name}</span>
-                  </div>
-                  <div className="patientAge">
-                    <label>Age:</label>
-                    <span>{this.state.patientInfo.age}</span>
-                  </div>
-                </div>
-              </Link>
-            </CardContent>
-          </Card>
+          <PatientInfo
+          className="findPatientResult"
+          patient={this.state.patientInfo}
+          onClick={() => {
+            this.props.history.push(`/patients/${this.state.patientInfo.id}`)
+          }}
+          />
         )}
       </div>
     )

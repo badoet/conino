@@ -15,6 +15,10 @@ body {
   width: 100%;
 }
 
+.findPatientResult {
+  cursor: pointer;
+}
+
 .findPatientResult:hover {
   background: rgba(248, 249, 252, 0.9);
 }
