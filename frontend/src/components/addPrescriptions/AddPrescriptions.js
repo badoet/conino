@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import '../../styles/styles.css';
-import '../../styles/select2-bootstrap.css'
+import '../../styles/select2-bootstrap.css';
+import '../../styles/select2.min.css';
 import Select2 from 'react-select2-wrapper';
 
 class AddPrescriptions extends Component {
@@ -30,7 +31,7 @@ class AddPrescriptions extends Component {
     render() {
         return (
             <div>
-                <div className="tabTitle">Prescriptions</div>
+                <div className="tabTitle">Consultation</div>
 
                 <div class="form-group">
                     <label>Symptoms</label>
@@ -38,15 +39,19 @@ class AddPrescriptions extends Component {
                 </div>
 
                 <div class="form-group">
-                    <label >Diagnosis</label>
+                    <label>Diagnosis</label>
                     <textarea class="form-control" id="diagnosisTextArea" rows="3"></textarea>
                 </div>
 
+
+                <div class="form-group">
+                    <label>Prescriptions</label>
                 <Select2
                     data= {this.state.drugList}
-                    options={{
-                    placeholder: 'search by tags',
+                    options={{placeholder: 'search by tags',
                   }}/>
+
+                </div>
 
             </div>
         );
