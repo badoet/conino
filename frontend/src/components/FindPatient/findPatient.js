@@ -41,9 +41,25 @@ class FindPatient extends Component {
           margin="normal"
         />
         {this.state.patientInfo && (
-          <Card>
-            <CardContent>
-              <Link to={`/patients/${this.state.patientInfo.id}`}>{this.state.patientInfo.name}</Link>
+          <Card className="findPatientResult">
+            <CardContent className="patientInfo">
+              <Link to={`/patients/${this.state.patientInfo.id}`}>
+                <img className="patientImg" src={this.state.patientInfo.imageUrl} />
+                <div className="patientDetails">
+                  <div className="patientId">
+                    <label>Patient ID:</label>
+                    <span>{this.state.patientInfo.id}</span>
+                  </div>
+                  <div className="patientName">
+                    <label>Name:</label>
+                    <span>{this.state.patientInfo.name}</span>
+                  </div>
+                  <div className="patientAge">
+                    <label>Age:</label>
+                    <span>{this.state.patientInfo.age}</span>
+                  </div>
+                </div>
+              </Link>
             </CardContent>
           </Card>
         )}

@@ -3,6 +3,6 @@ export default {
     id: '8780191',
     name: "Stanley Gunawan",
     age: 31,
-    imageUrl: "",
+    imageUrl: "/images/8780191.jpeg",
   }
 }

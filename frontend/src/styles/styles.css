@@ -14,3 +14,35 @@ body {
 .findPatientField  {
   width: 100%;
 }
+
+.findPatientResult:hover {
+  background: rgba(248, 249, 252, 0.9);
+}
+
+.findPatientResult a,
+.findPatientResult a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.patientInfo {
+  position: relative;
+}
+
+.patientImg {
+  position: absolute;
+  top: 1rem;
+  left: 1.2rem;
+  width: 4.8rem;
+  height: auto;
+  border-radius: 3rem;
+}
+
+.patientDetails {
+  padding-left: 5.5rem;
+}
+
+.patientDetails label {
+  margin: auto;
+  width: 96px;
+}
