@@ -42,8 +42,8 @@ const styles = theme => ({
 class Home extends Component {
   static contextTypes = {
     router: PropTypes.object,
-    classes: PropTypes.object.isRequired,
-    theme: PropTypes.object.isRequired,
+    classes: PropTypes.object,
+    theme: PropTypes.object,
   };
 
   constructor(props) {
