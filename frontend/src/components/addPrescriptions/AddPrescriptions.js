@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import Select2 from 'react-select2-wrapper';
 import {Panel} from 'react-bootstrap';
+import { Button} from 'reactstrap';
 
 class AddPrescriptions extends Component {
   static contextTypes = {
@@ -170,12 +171,13 @@ class AddPrescriptions extends Component {
 
                     </div>
 
+                    <div className="floatRight">
+                        <Button bsStyle="primary" bsSize="large" active>
+                            Submit
+                        </Button>
+                        </div>
+
                 </div>
-
-
-
-
-
             </div>
         );
     }

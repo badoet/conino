@@ -13,14 +13,14 @@ export default {
   },
   "222": {
     id: '222',
-    name: "Dummy Data",
-    age: 55,
+    name: "Jason Sia",
+    age: 27,
     imageUrl: "",
   },
   "333": {
     id: '333',
-    name: "Dummy Data",
-    age: 60,
+    name: "Agnes Chew",
+    age: 23,
     imageUrl: "",
   },
 }

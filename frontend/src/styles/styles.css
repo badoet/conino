@@ -87,5 +87,8 @@ body {
 .viewPrescribedContainer {
     margin: 0 40vw !important;
     align-content: center;
-    min-width: 100vw;
+}
+
+.floatRight{
+    float:right;
 }
