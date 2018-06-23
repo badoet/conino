@@ -16,7 +16,9 @@ class ViewAllergies extends Component {
 
   render() {
     return (
-
+      <div>
+        ViewAllergies
+      </div>
     );
   };
 }

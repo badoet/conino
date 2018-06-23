@@ -16,7 +16,9 @@ class AddPrescriptions extends Component {
 
   render() {
     return (
-
+      <div>
+        AddPrescriptions
+      </div>
     );
   };
 }

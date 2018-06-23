@@ -5,7 +5,7 @@ import CardContent from '@material-ui/core/CardContent';
 import { Link } from "react-router-dom";
 import Patients from '../../config/patients';
 
-import './styles.css';
+import '../../styles/styles.css';
 
 class FindPatient extends Component {
 
