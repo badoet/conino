@@ -8,7 +8,7 @@ import reducers from '../reducers';
 import Config from './config';
 
 import '../../node_modules/normalize.css/normalize.css';
-import TopNav from './TopNav';
+import TopNav from './topNav/TopNav';
 import Home from './home/Home';
 import FindPatient from './findPatient/FindPatient';
 
