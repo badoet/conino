@@ -9,7 +9,7 @@ class PatientInfo extends Component {
     return (
       <Card className={this.props.className} onClick={this.props.onClick}>
         <CardContent className="patientInfo">
-          <img className="patientImg" src={this.props.patient.imageUrl} />
+          <img className="patientImg" alt="" src={this.props.patient.imageUrl} />
           <div className="patientDetails">
             <div className="patientId">
               <label>Patient ID:</label>
