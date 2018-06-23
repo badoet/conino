@@ -11,6 +11,7 @@ import '../../node_modules/normalize.css/normalize.css';
 import TopNav from './TopNav';
 import Home from './home/Home';
 import FindPatient from './findPatient/FindPatient';
+import AddPrescriptions from './addPrescriptions/AddPrescriptions';
 
 const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
 const store = createStoreWithMiddleware(reducers);
@@ -23,9 +24,11 @@ class App extends Component {
           <Config>
             <TopNav />
             <Switch>
+
               <Route path="/start" component={FindPatient} />
               <Route path="/patients/:id" component={Home} />
               <Route path="/" component={Home} />
+              <Route path="/addPrescriptions" component={AddPrescriptions} />
             </Switch>
           </Config>
         </Router>
