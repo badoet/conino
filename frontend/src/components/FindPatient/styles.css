@@ -1,0 +1,12 @@
+.findPatientContainer {
+  margin: 2rem auto;
+  max-width: 640px;
+}
+
+.findPatientHeader {
+  font-size: 2rem;
+}
+
+.findPatientField  {
+  width: 100%;
+}
