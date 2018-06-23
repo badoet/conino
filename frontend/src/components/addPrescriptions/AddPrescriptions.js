@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import '../../styles/styles.css';
-import '../../styles/select2-bootstrap.css';
-import '../../styles/select2.min.css';
 import Select2 from 'react-select2-wrapper';
 
 class AddPrescriptions extends Component {
@@ -51,8 +48,9 @@ class AddPrescriptions extends Component {
 }
 
 function mapStateToProps() {
-    return {}
+  return {
+    
+  }
 }
-
 
 export default connect(mapStateToProps, {})(AddPrescriptions);
