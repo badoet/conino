@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { Card, CardText, CardBody,
-    CardTitle} from 'reactstrap';
+import {
+  Card,
+  CardText,
+  CardBody,
+  CardTitle
+} from 'reactstrap';
 
 class ViewAllergies extends Component {
     static contextTypes = {
@@ -27,42 +31,40 @@ class ViewAllergies extends Component {
     }
 
     getAllergies = () => {
-        let table = [];
+        let children = [];
         for (let i = 0; i < this.state.allergies.length; i++) {
-            let children = [];
             children.push(
-                <Card>
-                    <CardBody>
-                        <CardTitle>{this.state.allergies[i][0]}</CardTitle>
+                <div key={i}>
+                  <Card>
+                      <CardBody>
+                          <CardTitle>{this.state.allergies[i][0]}</CardTitle>
 
-                        <CardText>
-                            {this.state.allergies[i][1]}
-                        </CardText>
-                    </CardBody>
-                </Card>
+                          <CardText>
+                              {this.state.allergies[i][1]}
+                          </CardText>
+                      </CardBody>
+                  </Card>
+                  <br />
+                </div>
             );
-            children.push(<br />);
-
-            table.push(<tr>{children}</tr>);
         }
-        return table;
+
+        return <div>{children}</div>;
     }
-
-
 
     render() {
-        return (
-            <div className="viewPrescribedContainer">
-                {this.getAllergies()};
-            </div>
-        );
+      return (
+          <div className="viewPrescribedContainer">
+              { this.getAllergies() }
+          </div>
+      );
     }
-
-;
 }
 
 function mapStateToProps() {
-    return {}
+    return {
+
+    }
 }
 
 export default connect(mapStateToProps, {})(ViewAllergies);

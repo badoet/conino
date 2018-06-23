@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { Card, CardText, CardBody,
-    CardTitle, CardSubtitle} from 'reactstrap';
+import {
+  Card,
+  CardText,
+  CardBody,
+  CardTitle,
+  CardSubtitle
+} from 'reactstrap';
 
 class ViewPrescribedAntibiotics extends Component {
     static contextTypes = {
         router: PropTypes.object
     };
+
     constructor() {
         super();
         this.state = {
@@ -37,43 +43,41 @@ class ViewPrescribedAntibiotics extends Component {
     };
 
     getHistory = () => {
-        let table = [];
-        for (let i = 0; i < this.state.history.length; i++) {
-            let children = [];
-            children.push(
-            <Card>
-                <CardBody>
-                    <CardTitle>{this.state.history[i][0]}</CardTitle>
-                    <CardSubtitle>{this.state.history[i][1]} : {this.state.history[i][2]}</CardSubtitle>
-                    <CardText>
-                        {this.state.history[i][3][0]} <br />
-                        {this.state.history[i][3][1]}
-                    </CardText>
-                </CardBody>
-            </Card>
-            );
-            children.push(<br />);
+      let children = [];
+      for (let i = 0; i < this.state.history.length; i++) {
+          children.push(
+            <div key={i}>
+              <Card>
+                  <CardBody>
+                      <CardTitle>{this.state.history[i][0]}</CardTitle>
+                      <CardSubtitle>{this.state.history[i][1]} : {this.state.history[i][2]}</CardSubtitle>
+                      <CardText>
+                          {this.state.history[i][3][0]} <br />
+                          {this.state.history[i][3][1]}
+                      </CardText>
+                  </CardBody>
+              </Card>
+              <br />
+            </div>
+          );
+      }
 
-            table.push(<tr>{children}</tr>);
-        }
-        return table;
+      return <div>{children}</div>;
     }
-
 
     render() {
-        return (<div className="viewPrescribedContainer">
-                    {this.getHistory()};
-            </div>
-        );
+      return (
+        <div className="viewPrescribedContainer">
+          { this.getHistory() }
+        </div>
+      );
     }
-
-;
-
-
 }
 
 function mapStateToProps() {
-    return {}
+    return {
+
+    }
 }
 
 export default connect(mapStateToProps, {})(ViewPrescribedAntibiotics);
