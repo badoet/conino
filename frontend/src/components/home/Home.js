@@ -10,7 +10,7 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 
 import Patients from '../../config/patients';
-import PatientAction from '../../reducers/PatientRedux'
+import PatientAction from '../../reducers/PatientReducer';
 
 import AddPrescriptions from '../addPrescriptions/AddPrescriptions';
 import ViewAllergies from '../viewAllergies/ViewAllergies';
