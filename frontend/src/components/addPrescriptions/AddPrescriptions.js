@@ -74,7 +74,8 @@ class AddPrescriptions extends Component {
                     {text: 'Phenobarbital', id:54},
                     {text: 'Lamotrigine', id:55},
                     {text: 'Fosphenytoin', id:56},
-                    {text: 'Valproic acid', id:57}
+                    {text: 'Valproic acid', id:57},
+                    {text: 'Paracetomol', id:57}
                 ],
             prescriptions: [],
             currentSelection: "",
@@ -93,8 +94,15 @@ class AddPrescriptions extends Component {
 
     handleKeyPress = (event) => {
         if(event.key === 'Enter'){
+
             let newItem = [this.state.currentSelection, this.state.currentQty];
-            this.setState({prescriptions:[...this.state.prescriptions, newItem]});
+
+            if(newItem[0]==="Paracetomol"){
+                alert("This patient is alergic to Paracetomol");
+            }else{
+                this.setState({prescriptions:[...this.state.prescriptions, newItem]});
+            }
+
         }
 
     };
