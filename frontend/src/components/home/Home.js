@@ -9,6 +9,10 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 
+import AddPrescriptions from '../addPrescriptions/AddPrescriptions';
+import ViewAllergies from '../viewAllergies/ViewAllergies';
+import ViewPrescribedAntibiotics from '../viewPrescribedAntibiotics/ViewPrescribedAntibiotics';
+
 function TabContainer({ children, dir }) {
   return (
     <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
@@ -77,9 +81,15 @@ class Home extends Component {
           index={this.state.value}
           onChangeIndex={this.handleChangeIndex}
         >
-          <TabContainer dir={theme.direction}>Item One</TabContainer>
-          <TabContainer dir={theme.direction}>Item Two</TabContainer>
-          <TabContainer dir={theme.direction}>Item Three</TabContainer>
+          <TabContainer dir={theme.direction}>
+            <AddPrescriptions />
+          </TabContainer>
+          <TabContainer dir={theme.direction}>
+            <ViewAllergies />
+          </TabContainer>
+          <TabContainer dir={theme.direction}>
+            <ViewPrescribedAntibiotics />
+          </TabContainer>
         </SwipeableViews>
       </div>
     );
