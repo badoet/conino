@@ -9,7 +9,7 @@ import Config from './config';
 
 import TopNav from './topNav/TopNav';
 import Home from './home/Home';
-import FindPatient from './findPatient/FindPatient';
+import FindPatient from './findPatient/findPatient';
 // import AddPrescriptions from './addPrescriptions/AddPrescriptions';
 // import ViewAllergies from './viewAllergies/ViewAllergies';
 // import ViewPrescribedAntibiotics from './viewPrescribedAntibiotics/ViewPrescribedAntibiotics';
