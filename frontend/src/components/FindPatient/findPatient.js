@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Patients from '../../config/patients';
 
-import './styles.css';
+import '../../styles/styles.css';
 
 class FindPatient extends Component {
 

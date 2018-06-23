@@ -16,7 +16,9 @@ class ViewPrescribedAntibiotics extends Component {
 
   render() {
     return (
-
+      <div>
+        ViewPrescribedAntibiotics
+      </div>
     );
   };
 }
@@ -27,4 +29,4 @@ function mapStateToProps() {
   }
 }
 
-export default connect(mapStateToProps, {})(ViewAllergies);
+export default connect(mapStateToProps, {})(ViewPrescribedAntibiotics);
