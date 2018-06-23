@@ -21,7 +21,7 @@ class App extends Component {
       <Provider store={store}>
         <Router history={history}>
           <Config>
-            <TopNav></TopNav>
+            <TopNav />
             <Switch>
               <Route path="/start" component={FindPatient} />
               <Route path="/" component={Home} />
