@@ -100,7 +100,6 @@ class AddPrescriptions extends Component {
 
     getSelectedPrescriptions = () => {
         let table = [];
-
         for(let i = 0; i < this.state.prescriptions.length; i++){
             let children = [];
             for(let j = 0 ; j < 2 ; j++){
@@ -115,7 +114,6 @@ class AddPrescriptions extends Component {
     render() {
         return (
             <div>
-                <div className="tabTitle">Consultation</div>
 
                 <div>
                     <div className="row">

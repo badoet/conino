@@ -1,32 +1,79 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import { Card, CardText, CardBody,
+    CardTitle, CardSubtitle} from 'reactstrap';
 
 class ViewPrescribedAntibiotics extends Component {
-  static contextTypes = {
-    router: PropTypes.object
-  };
-
-  constructor() {
-    super();
-    this.state = {
-
+    static contextTypes = {
+        router: PropTypes.object
     };
-  }
+    constructor() {
+        super();
+        this.state = {
+            history: [
+                [
+                    '20/06/2018',
+                    "blood shot eyes",
+                    "lack of sleep",
+                    [
+                        ["Amoxicillin","10"],
+                        ["Piperacillin","20"]
+                    ]
 
-  render() {
-    return (
-      <div>
-        ViewPrescribedAntibiotics
-      </div>
-    );
-  };
+                ],
+                [
+                    '20/02/2017',
+                    "blood shot eyes",
+                    "lack of sleep",
+                    [
+                        ["Amoxicillin","10"],
+                        ["Piperacillin","50"]
+                    ]
+
+                ]
+            ]
+        };
+    };
+
+    getHistory = () => {
+        let table = [];
+        for (let i = 0; i < this.state.history.length; i++) {
+            let children = [];
+            children.push(
+            <Card>
+                <CardBody>
+                    <CardTitle>{this.state.history[i][0]}</CardTitle>
+                    <CardSubtitle>{this.state.history[i][1]} : {this.state.history[i][2]}</CardSubtitle>
+                    <CardText>
+                        {this.state.history[i][3][0]} <br />
+                        {this.state.history[i][3][1]}
+                    </CardText>
+                </CardBody>
+            </Card>
+            );
+            children.push(<br />);
+
+            table.push(<tr>{children}</tr>);
+        }
+        return table;
+    }
+
+
+    render() {
+        return (<div className="viewPrescribedContainer">
+                    {this.getHistory()};
+            </div>
+        );
+    }
+
+;
+
+
 }
 
 function mapStateToProps() {
-  return {
-
-  }
+    return {}
 }
 
 export default connect(mapStateToProps, {})(ViewPrescribedAntibiotics);
