@@ -10,7 +10,8 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 
 import Patients from '../../config/patients';
-import PatientAction from '../../reducers/PatientRedux'
+import PatientInfo from '../findPatient/PatientInfo';
+import PatientAction from '../../reducers/PatientReducer';
 
 import AddPrescriptions from '../addPrescriptions/AddPrescriptions';
 import ViewAllergies from '../viewAllergies/ViewAllergies';
@@ -73,9 +74,12 @@ class Home extends Component {
 
     return (
       <div className={classes.root}>
-        {this.props.patient && (
-          <div>{this.props.patient.name}</div>
-        )}
+        {
+          this.props.patient !== null ?
+          <PatientInfo patient={this.props.patient} />
+          :
+          null
+        }
         <AppBar position="static" color="default">
           <Tabs
             value={this.state.value}

@@ -9,10 +9,10 @@ import Config from './config';
 
 import TopNav from './topNav/TopNav';
 import Home from './home/Home';
-import FindPatient from './findPatient/findPatient';
-import AddPrescriptions from './addPrescriptions/AddPrescriptions';
-import ViewAllergies from './viewAllergies/ViewAllergies';
-import ViewPrescribedAntibiotics from './viewPrescribedAntibiotics/ViewPrescribedAntibiotics';
+import FindPatient from './findPatient/FindPatient';
+// import AddPrescriptions from './addPrescriptions/AddPrescriptions';
+// import ViewAllergies from './viewAllergies/ViewAllergies';
+// import ViewPrescribedAntibiotics from './viewPrescribedAntibiotics/ViewPrescribedAntibiotics';
 
 const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
 const store = createStoreWithMiddleware(reducers);
@@ -25,9 +25,9 @@ class App extends Component {
           <Config>
             <TopNav />
             <Switch>
-              <Route path="/add-prescriptions" component={AddPrescriptions} />
+              {/*<Route path="/add-prescriptions" component={AddPrescriptions} />
               <Route path="/view-allergies" component={ViewAllergies} />
-              <Route path="/view-prescribed-antibiotics" component={ViewPrescribedAntibiotics} />
+              <Route path="/view-prescribed-antibiotics" component={ViewPrescribedAntibiotics} />*/}
               <Route path="/patients/:id" component={Home} />
               <Route path="/" component={FindPatient} />
             </Switch>

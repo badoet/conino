@@ -5,7 +5,7 @@ import TextField from '@material-ui/core/TextField';
 
 import Patients from '../../config/patients';
 import PatientInfo from './PatientInfo';
-import PatientAction from '../../reducers/PatientRedux'
+import PatientAction from '../../reducers/PatientReducer';
 
 class FindPatient extends Component {
   static contextTypes = {

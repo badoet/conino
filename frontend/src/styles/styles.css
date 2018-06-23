@@ -27,6 +27,13 @@ body {
   width: 100%;
 }
 
+.tabTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 2rem 0;
+}
+
+
 .findPatientResult {
   cursor: pointer;
 }
