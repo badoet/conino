@@ -25,7 +25,10 @@ TabContainer.propTypes = {
 const styles = theme => ({
   root: {
     backgroundColor: theme.palette.background.paper,
-    width: 500,
+    width: '100%',
+  },
+  tabRoot: {
+    minWidth: '33%',
   },
 });
 
@@ -64,9 +67,9 @@ class Home extends Component {
             textColor="primary"
             fullWidth
           >
-            <Tab label="Item One" />
-            <Tab label="Item Two" />
-            <Tab label="Item Three" />
+            <Tab label="Add Prescriptions" className={classes.tabRoot} />
+            <Tab label="View Allergies" className={classes.tabRoot} />
+            <Tab label="View Prescribed Antibiotics" className={classes.tabRoot} />
           </Tabs>
         </AppBar>
         <SwipeableViews
