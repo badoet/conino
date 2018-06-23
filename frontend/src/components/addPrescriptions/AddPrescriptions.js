@@ -180,7 +180,7 @@ class AddPrescriptions extends Component {
                     </div>
 
                     <div className="floatRight">
-                        <Button bsStyle="primary" bsSize="large" active>
+                        <Button bsstyle="primary" bssize="large" active>
                             Submit
                         </Button>
                         </div>
