@@ -25,30 +25,27 @@ class AddPrescriptions extends Component {
 
   render() {
     return (
-        <div>
-            <div className="tabTitle">Consultation</div>
+      <div>
+        <div className="tabTitle">Consultation</div>
 
-            <div className="form-group">
-                <label>Symptoms</label>
-                <textarea className="form-control" id="symptomsTextArea" rows="3"></textarea>
-            </div>
-
-            <div className="form-group">
-                <label>Diagnosis</label>
-                <textarea className="form-control" id="diagnosisTextArea" rows="3"></textarea>
-            </div>
-
-
-            <div className="form-group">
-                <label>Prescriptions</label>
-            <Select2
-                data= {this.state.drugList}
-                options={{placeholder: 'search by tags',
-              }}/>
-
-            </div>
-
+        <div className="form-group">
+            <label>Symptoms</label>
+            <textarea className="form-control" id="symptomsTextArea" rows="3"></textarea>
         </div>
+
+        <div className="form-group">
+            <label>Diagnosis</label>
+            <textarea className="form-control" id="diagnosisTextArea" rows="3"></textarea>
+        </div>
+
+
+        <div className="form-group">
+            <label>Prescriptions</label>
+        <Select2
+            data= {this.state.drugList}
+            options={{placeholder: 'search by tags',}}/>
+        </div>
+      </div>
     );
   }
 }
