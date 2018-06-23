@@ -49,7 +49,7 @@ class FindPatient extends Component {
           <Card className="findPatientResult">
             <CardContent className="patientInfo">
               <Link to={`/patients/${this.state.patientInfo.id}`}>
-                <img className="patientImg" src={this.state.patientInfo.imageUrl} />
+                <img className="patientImg" alt="" src={this.state.patientInfo.imageUrl} />
                 <div className="patientDetails">
                   <div className="patientId">
                     <label>Patient ID:</label>

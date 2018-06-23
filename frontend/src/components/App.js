@@ -26,11 +26,11 @@ class App extends Component {
           <Config>
             <TopNav />
             <Switch>
-              <Route path="/start" component={FindPatient} />
               <Route path="/add-prescriptions" component={AddPrescriptions} />
               <Route path="/view-allergies" component={ViewAllergies} />
               <Route path="/view-prescribed-antibiotics" component={ViewPrescribedAntibiotics} />
               <Route path="/patients/:id" component={Home} />
+              <Route path="/start" component={FindPatient} />
               <Route path="/" component={Home} />
             </Switch>
           </Config>
