@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import { Link } from "react-router-dom";
 import Patients from '../../config/patients';
 
 import './styles.css';
@@ -16,8 +19,13 @@ class FindPatient extends Component {
 
   handleChange = name => event => {
     this.setState({
-      [name]: event.target.value,
+      patientId: event.target.value,
     })
+
+    const patientInfo = Patients[event.target.value]
+    if (patientInfo) {
+      this.setState({patientInfo})
+    }
   }
 
   render() {
@@ -32,6 +40,13 @@ class FindPatient extends Component {
           onChange={this.handleChange('patientId')}
           margin="normal"
         />
+        {this.state.patientInfo && (
+          <Card>
+            <CardContent>
+              <Link to={`/patients/${this.state.patientInfo.id}`}>{this.state.patientInfo.name}</Link>
+            </CardContent>
+          </Card>
+        )}
       </div>
     )
   }

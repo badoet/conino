@@ -24,6 +24,7 @@ class App extends Component {
             <TopNav></TopNav>
             <Switch>
               <Route path="/start" component={FindPatient} />
+              <Route path="/patients/:id" component={Home} />
               <Route path="/" component={Home} />
             </Switch>
           </Config>
