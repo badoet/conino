@@ -69,3 +69,18 @@ body {
   margin: auto;
   width: 96px;
 }
+
+
+.select2 {
+  width: 100% !important;
+}
+
+.qtyStyle{
+    line-height:28px !important;
+    height:28px;
+}
+
+.fieldHeader {
+    font-weight:bold;
+
+}
