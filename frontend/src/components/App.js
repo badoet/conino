@@ -12,7 +12,6 @@ import TopNav from './topNav/TopNav';
 import Home from './home/Home';
 import FindPatient from './findPatient/FindPatient';
 import AddPrescriptions from './addPrescriptions/AddPrescriptions';
-import AddPrescriptions from './addPrescriptions/AddPrescriptions';
 import ViewAllergies from './viewAllergies/ViewAllergies';
 import ViewPrescribedAntibiotics from './viewPrescribedAntibiotics/ViewPrescribedAntibiotics';
 
