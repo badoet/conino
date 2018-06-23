@@ -12,6 +12,10 @@ import Typography from '@material-ui/core/Typography';
 import Patients from '../../config/patients';
 import PatientAction from '../../reducers/PatientRedux'
 
+import AddPrescriptions from '../addPrescriptions/AddPrescriptions';
+import ViewAllergies from '../viewAllergies/ViewAllergies';
+import ViewPrescribedAntibiotics from '../viewPrescribedAntibiotics/ViewPrescribedAntibiotics';
+
 function TabContainer({ children, dir }) {
   return (
     <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
@@ -28,7 +32,10 @@ TabContainer.propTypes = {
 const styles = theme => ({
   root: {
     backgroundColor: theme.palette.background.paper,
-    width: 500,
+    width: '100%',
+  },
+  tabRoot: {
+    minWidth: '33.33%',
   },
 });
 
@@ -77,9 +84,9 @@ class Home extends Component {
             textColor="primary"
             fullWidth
           >
-            <Tab label="Item One" />
-            <Tab label="Item Two" />
-            <Tab label="Item Three" />
+            <Tab label="Add Prescriptions" className={classes.tabRoot} />
+            <Tab label="View Allergies" className={classes.tabRoot} />
+            <Tab label="View Prescribed Antibiotics" className={classes.tabRoot} />
           </Tabs>
         </AppBar>
         <SwipeableViews
@@ -87,9 +94,15 @@ class Home extends Component {
           index={this.state.value}
           onChangeIndex={this.handleChangeIndex}
         >
-          <TabContainer dir={theme.direction}>Item One</TabContainer>
-          <TabContainer dir={theme.direction}>Item Two</TabContainer>
-          <TabContainer dir={theme.direction}>Item Three</TabContainer>
+          <TabContainer dir={theme.direction}>
+            <AddPrescriptions />
+          </TabContainer>
+          <TabContainer dir={theme.direction}>
+            <ViewAllergies />
+          </TabContainer>
+          <TabContainer dir={theme.direction}>
+            <ViewPrescribedAntibiotics />
+          </TabContainer>
         </SwipeableViews>
       </div>
     );

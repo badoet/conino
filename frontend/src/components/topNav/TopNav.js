@@ -14,11 +14,15 @@ class TopNav extends Component {
     };
   }
 
+  reloadPage = () => {
+    window.location.reload();
+  }
+
   render() {
     return (
       <header>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <a className="navbar-brand" href="/">conino</a>
+        <nav className="navbar navbar-custom">
+          <a className="navbar-brand navbar-text-custom pointer" onClick={this.reloadPage}>conino</a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
