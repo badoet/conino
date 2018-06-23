@@ -28,7 +28,7 @@ const styles = theme => ({
     width: '100%',
   },
   tabRoot: {
-    minWidth: '33%',
+    minWidth: '33.33%',
   },
 });
 
