@@ -5,6 +5,7 @@ import TextField from '@material-ui/core/TextField';
 
 import Patients from '../../config/patients';
 import PatientInfo from '../PatientInfo';
+import PatientAction from '../../reducers/PatientRedux'
 
 class FindPatient extends Component {
   static contextTypes = {
@@ -47,6 +48,7 @@ class FindPatient extends Component {
           className="findPatientResult"
           patient={this.state.patientInfo}
           onClick={() => {
+            this.props.selectPatient(this.state.patientInfo)
             this.props.history.push(`/patients/${this.state.patientInfo.id}`)
           }}
           />
@@ -62,4 +64,8 @@ function mapStateToProps() {
   }
 }
 
-export default connect(mapStateToProps, {})(FindPatient);
+const mapDispatchToProps = dispatch => ({
+  selectPatient: (patient) => dispatch(PatientAction.selectPatient(patient)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(FindPatient);

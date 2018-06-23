@@ -9,6 +9,9 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 
+import Patients from '../../config/patients';
+import PatientAction from '../../reducers/PatientRedux'
+
 function TabContainer({ children, dir }) {
   return (
     <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
@@ -43,6 +46,13 @@ class Home extends Component {
     };
   }
 
+  componentDidMount() {
+    if (!this.props.patient && this.props.match && this.props.match.params.id) {
+      const patientInfo = Patients[this.props.match.params.id]
+      if (patientInfo)  this.props.selectPatient(patientInfo)
+    }
+  }
+
   handleChange = (event, value) => {
     this.setState({ value });
   };
@@ -56,6 +66,9 @@ class Home extends Component {
 
     return (
       <div className={classes.root}>
+        {this.props.patient && (
+          <div>{this.props.patient.name}</div>
+        )}
         <AppBar position="static" color="default">
           <Tabs
             value={this.state.value}
@@ -83,13 +96,17 @@ class Home extends Component {
   };
 }
 
-function mapStateToProps() {
+function mapStateToProps(state) {
   return {
-
+    patient: state.patient.patient,
   }
 }
 
+const mapDispatchToProps = dispatch => ({
+  selectPatient: (patient) => dispatch(PatientAction.selectPatient(patient)),
+})
+
 export default compose(
   withStyles(styles, { withTheme: true }),
-  connect(mapStateToProps, {})
+  connect(mapStateToProps, mapDispatchToProps)
 )(Home);
