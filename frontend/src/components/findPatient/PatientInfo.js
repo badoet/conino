@@ -1,8 +1,20 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 
 class PatientInfo extends Component {
+  static contextTypes = {
+    router: PropTypes.object
+  };
+
+  constructor() {
+    super()
+    this.state = {
+
+    }
+  }
 
   render() {
     return (
@@ -29,4 +41,10 @@ class PatientInfo extends Component {
   }
 }
 
-export default PatientInfo;
+function mapStateToProps() {
+  return {
+
+  }
+}
+
+export default connect(mapStateToProps, {})(PatientInfo);

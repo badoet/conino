@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import TextField from '@material-ui/core/TextField';
 
 import Patients from '../../config/patients';
-import PatientInfo from '../PatientInfo';
+import PatientInfo from './PatientInfo';
 
 class FindPatient extends Component {
   static contextTypes = {
