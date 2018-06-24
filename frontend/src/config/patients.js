@@ -23,4 +23,10 @@ export default {
     age: 23,
     imageUrl: "/images/female1.png",
   },
+  "444": {
+    id: '444',
+    name: "John Doe",
+    age: 21,
+    imageUrl: "/images/male3.png",
+  },
 }
