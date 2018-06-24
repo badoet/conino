@@ -6,10 +6,6 @@ import {Panel} from 'react-bootstrap';
 import { Button} from 'reactstrap';
 
 class AddPrescriptions extends Component {
-  static contextTypes = {
-    router: PropTypes.object
-  };
-
     static contextTypes = {
         router: PropTypes.object
     };
@@ -121,73 +117,64 @@ class AddPrescriptions extends Component {
 
 
     render() {
-        return (
-            <div>
-
-                <div>
-                    <div className="row">
-                        <div className="col-xl-6 col-lg-6">
-                            <div className="form-group">
-                                <label className="fieldHeader">Symptoms</label>
-                                <textarea className="form-control" id="symptomsTextArea" rows="3"></textarea>
-                            </div>
-                        </div>
-                        <div className="col-xl-6 col-lg-6">
-                            <div className="form-group">
-                                <label className="fieldHeader">Diagnosis</label>
-                                <textarea className="form-control" id="diagnosisTextArea" rows="3"></textarea>
-                            </div>
-                        </div>
+      return (
+        <div>
+            <div className="row">
+                <div className="col-xl-6 col-lg-6">
+                    <div className="form-group">
+                        <label className="fieldHeader">Symptoms</label>
+                        <textarea className="form-control" id="symptomsTextArea" rows="3"></textarea>
                     </div>
-
-
-                    <div className="row">
-
-                        <div className="col-xl-4 col-lg-4">
-                            <div className="form-group">
-                                <label className="fieldHeader">Prescriptions</label>
-
-                                <div className="select2">
-                                    <Select2
-                                        ref="tags"
-                                        data={this.state.drugList}
-                                        options={{placeholder: 'Search for prescription'}}
-                                        onSelect={this.prescriptionOnSelect.bind(this)}
-                                        />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="col-xl-2 col-lg-2">
-                            <label className="fieldHeader">Qty</label>
-                            <input type="text" className="form-control qtyStyle" id="qty" onChange={e => this.onQtyChange(e)} onKeyPress={this.handleKeyPress.bind(this)}></input>
-                        </div>
-
-                        <div className="col-xl-6 col-lg-6">
-
-                            <Panel>
-                                <Panel.Heading className="fieldHeader">Selected Prescriptions</Panel.Heading>
-                                <Panel.Body>
-                                    <table>
-                                        {this.getSelectedPrescriptions()}
-                                    </table>
-                                </Panel.Body>
-                            </Panel>
-
-                        </div>
-
-
+                </div>
+                <div className="col-xl-6 col-lg-6">
+                    <div className="form-group">
+                        <label className="fieldHeader">Diagnosis</label>
+                        <textarea className="form-control" id="diagnosisTextArea" rows="3"></textarea>
                     </div>
-
-                    <div className="floatRight">
-                        <Button bsstyle="primary" bssize="large" active>
-                            Submit
-                        </Button>
-                        </div>
-
                 </div>
             </div>
-        );
+
+
+            <div className="row">
+                <div className="col-xl-4 col-lg-4">
+                    <div className="form-group">
+                        <label className="fieldHeader">Prescriptions</label>
+
+                        <div className="select2">
+                            <Select2
+                                ref="tags"
+                                data={this.state.drugList}
+                                options={{placeholder: 'Search for prescription'}}
+                                onSelect={this.prescriptionOnSelect.bind(this)}
+                                />
+                        </div>
+                    </div>
+                </div>
+
+                <div className="col-xl-2 col-lg-2">
+                    <label className="fieldHeader">Qty</label>
+                    <input type="text" className="form-control qtyStyle" id="qty" onChange={e => this.onQtyChange(e)} onKeyPress={this.handleKeyPress.bind(this)}></input>
+                </div>
+
+                <div className="col-xl-6 col-lg-6">
+                    <Panel>
+                        <Panel.Heading className="fieldHeader">Selected Prescriptions</Panel.Heading>
+                        <Panel.Body>
+                            <table>
+                                {this.getSelectedPrescriptions()}
+                            </table>
+                        </Panel.Body>
+                    </Panel>
+                </div>
+            </div>
+
+            <div className="floatRight">
+                <Button bsstyle="primary" bssize="large" active>
+                    Submit
+                </Button>
+            </div>
+        </div>
+      );
     }
 
 ;
